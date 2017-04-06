@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.sample.common.Array;
 
-public class ComparableTest {
+public class ComparatorTest {
 
 	public static void main(String[] args) {
 		// TO see Comparable
