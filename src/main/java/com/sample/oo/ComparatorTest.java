@@ -6,13 +6,9 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
-import com.sample.common.Array;
-
 public class ComparatorTest {
 
 	public static void main(String[] args) {
-		// TO see Comparable
-		// Array arr = new Array();
 		ConsumInfo consumInfo1 = new ConsumInfo(100, "consumInfo1", 400.0, new Date());
 		ConsumInfo consumInfo2 = new ConsumInfo(200, "consumInfo1", 200.0, new Date());
 		ConsumInfo consumInfo3 = new ConsumInfo(300, "consumInfo1", 100.0, new Date());

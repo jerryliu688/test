@@ -9,7 +9,7 @@ public class Compare {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		TreeSet set = new TreeSet();
+		TreeSet<Parent> set = new TreeSet<Parent>();
 		set.add(new Parent(3));
 		set.add(new Child());
 		set.add(new Parent(4));
