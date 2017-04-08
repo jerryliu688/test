@@ -3,19 +3,19 @@ package com.algorithm.common;
 public class BaseTen {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// i2c();
-		char c = (char) (2 + '0');
-		System.out.println(c);
-		String str = String.valueOf('2');
-		System.out.println(str.charAt(0));
-
-		// printInt1(837);
+		// char c = (char) (2 + '0');
+		// System.out.println(c);
+		// String str = String.valueOf('2');
+		// System.out.println(str.charAt(0));
+		System.out.println(7 + '0');
+		printInt1(837);
 		// c2i();
 		// c2i('a');
 	}
 
 	public static void printInt1(int number) {
+		// 7+'0'= int 55 => to char '7' so '0' is base char number
 		char digit = (char) (number % 10 + '0');
 		number = number / 10;
 		if (number != 0)

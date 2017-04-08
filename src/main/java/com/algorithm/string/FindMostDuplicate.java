@@ -1,6 +1,6 @@
-package com.algorithm.array;
+package com.algorithm.string;
 
-public class StringTest {
+public class FindMostDuplicate {
 
 	public static void main(String[] args) {
 		String s = "adfoweyirlkbasgxalueralsdhg"; // 待统计字符串

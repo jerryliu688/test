@@ -9,6 +9,9 @@ public class IntTest {
 		Integer i = 0;
 		name(i);
 		System.out.println(i);
+		int a =5/2;
+//		double x=3.14159;  
+//		int b=(int)x;
 //		int i = 128;
 //		         Integer i2 = 128;
 //		         Integer i3 = new Integer(128);
