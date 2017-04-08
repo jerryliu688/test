@@ -50,6 +50,7 @@ public class LinkedList {
 			System.out.print(temp.value + " ");
 			temp = temp.next;
 		}
+		System.out.println();
 	}
 
 	public void sortedInsert(int value) {
@@ -87,13 +88,125 @@ public class LinkedList {
 		return false;
 	}
 
+	public void reverse() {
+		Node curr = head;
+		Node prev = null;
+		Node next = null;
+		while (curr != null) {
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+		head = prev;
+	}
+
+	public Node reverseRecurseUtil(Node currentNode, Node nextNode) {
+		Node ret;
+		if (currentNode == null)
+			return null;
+		if (currentNode.next == null) {
+			currentNode.next = nextNode;
+			return currentNode;
+		}
+		ret = reverseRecurseUtil(currentNode.next, currentNode);
+		currentNode.next = nextNode;
+		return ret;
+	}
+
+	public void reverseRecurse() {
+		head = reverseRecurseUtil(head, null);
+	}
+
+	// The linked list is sorted and it contains some duplicate values
+	public void removeDuplicate() {
+		Node curr = head;
+		while (curr != null) {
+			if (curr.next != null && curr.value == curr.next.value)
+				curr.next = curr.next.next;
+			else
+				curr = curr.next;
+		}
+	}
+
+	public void freeList() {
+		head = null;
+		size = 0;
+	}
+
+	public boolean compareList(LinkedList ll) {
+		return compareList(head, ll.head);
+	}
+
+	public boolean compareList(Node head1, Node head2) {
+		if (head1 == null && head2 == null)
+			return true;
+		else if ((head1 == null) || (head2 == null) || (head1.value != head2.value))
+			return false;
+		else
+			return compareList(head1.next, head2.next);
+	}
+
+	public int findLength() {
+		Node curr = head;
+		int count = 0;
+		while (curr != null) {
+			count++;
+			curr = curr.next;
+		}
+		return count;
+	}
+
+	public int nthNodeFromBegining(int index) {
+		if (index > size() || index < 1)
+			return Integer.MAX_VALUE;
+		int count = 0;
+		Node curr = head;
+		while (curr != null && count < index - 1) {
+			count++;
+			curr = curr.next;
+		}
+		return curr.value;
+	}
+
+	public int nthNodeFromEnd(int index) {
+		int size = findLength();
+		int startIndex;
+		if (size != 0 && size < index) {
+			return Integer.MAX_VALUE;
+		}
+		startIndex = size - index + 1;
+		return nthNodeFromBegining(startIndex);
+	}
+
+	public int nthNodeFromEnd2(int index) {
+		int count = 1;
+		Node forward = head;
+		Node curr = head;
+		while (forward != null && count <= index) {
+			count++;
+			forward = forward.next;
+		}
+		if (forward == null)
+			return Integer.MAX_VALUE;
+		while (forward != null) {
+			forward = forward.next;
+			curr = curr.next;
+		}
+		return curr.value;
+	}
+
 	public static void main(String[] args) {
 		LinkedList linkedList = new LinkedList();
-		linkedList.addHead(1);
-		linkedList.addHead(2);
-		linkedList.addHead(3);
-		linkedList.addTail(5);
-		linkedList.addTail(6);
+		// linkedList.addHead(1);
+		// linkedList.addHead(2);
+		// linkedList.addHead(3);
+		// linkedList.addTail(5);
+		// linkedList.addTail(6);
+		linkedList.sortedInsert(5);
+		linkedList.sortedInsert(6);
+		linkedList.sortedInsert(1);
+		linkedList.reverse();
 		linkedList.print();
 	}
 }
