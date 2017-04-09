@@ -2,6 +2,7 @@ package com.sample.collections;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Iterator;
 import java.util.Queue;
 
 public class ArrayDequeTest {
@@ -30,6 +31,22 @@ public class ArrayDequeTest {
 		// poll出第一个元素
 		System.out.println(queue.poll());
 		System.out.println(queue);// [轻量级JavaEE企业应用实践, 疯狂Android讲义]
+
+		 //iterator() is used to print all the elements
+	     //next() returns the next element on each iteration
+	     System.out.println("printing elements using iterator:");
+		 
+	     for(Iterator itr = stack.iterator();itr.hasNext();)  {
+	        System.out.println(itr.next());
+	     }
+
+	     //descendingIterator() is used to print the elements in reverse order
+	     //next() returns the next element on each iteration
+	     System.out.println("printing elements in reverse order:");
+		 
+	     for(Iterator descItr = stack.descendingIterator();descItr.hasNext();) {
+	        System.out.println(descItr.next());
+	     }
 
 	}
 
