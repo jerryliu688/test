@@ -4,7 +4,7 @@ package com.sample.common;
 
 class Bulb {
 	// Enums
-	enum BulbSize {
+	public enum BulbSize {
 		SMALL, MEDIUM, LARGE
 	}
 
