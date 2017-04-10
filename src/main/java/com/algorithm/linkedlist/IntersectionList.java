@@ -36,4 +36,34 @@ public class IntersectionList extends LinkedList {
 
 	}
 
+	public static Node getIntersectionNode(Node headA, Node headB) {
+		int sizeA = getSize(headA);
+		int sizeB = getSize(headB);
+		if (sizeA > sizeB) {
+			for (int i = 0; i < (sizeA - sizeB); i++) {
+				headA = headA.next;
+			}
+		} else if (sizeB > sizeA) {
+			for (int i = 0; i < (sizeB - sizeA); i++) {
+				headB = headB.next;
+			}
+		}
+		while (headA != null && headB != null) {
+			if (headA.value == headB.value) {
+				return headA;
+			}
+			headA = headA.next;
+			headB = headB.next;
+		}
+		return null;
+	}
+
+	private static int getSize(Node head) {
+		int count = 0;
+		while (head != null) {
+			count++;
+			head = head.next;
+		}
+		return count;
+	}
 }

@@ -11,7 +11,6 @@ public class Duplicates {
 
 		int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 5 };
 		printRepeating(arr);
-		removeDuplicates(arr);
 		System.out.println(Arrays.toString(arr));
 	}
 
@@ -42,18 +41,5 @@ public class Duplicates {
 		}
 	}
 
-	public static int removeDuplicates(int[] nums) {
-		if (nums.length == 0)
-			return 0;
-		int id = 1;
-		for (int i = 1; i < nums.length; i++) {
-			if (nums[i] != nums[id - 1]) {
-				nums[id++] = nums[i];
-			}
-		}
-		return id;
-		// nums[0]=10;
-		// return 0;
-	}
 
 }
