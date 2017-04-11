@@ -23,7 +23,7 @@ public class HashMapTest {
 		maptest.put("3", "day33"); 
 		Collection<String> keyset = maptest.keySet();
 		List<String> list = new ArrayList<String>(keyset);
-
+		System.out.println("get"+maptest.get("2"));
 		// 对key键值按字典升序排序
 //		Collections.sort(list);
 ////	

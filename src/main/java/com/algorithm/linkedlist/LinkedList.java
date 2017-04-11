@@ -88,36 +88,7 @@ public class LinkedList {
 		return false;
 	}
 
-	public void reverse() {
-		Node curr = head;
-		Node prev = null;
-		Node next = null;
-		while (curr != null) {
-			next = curr.next;
-			curr.next = prev;
-			prev = curr;
-			curr = next;
-		}
-		head = prev;
-	}
-
-	public Node reverseRecurseUtil(Node currentNode, Node nextNode) {
-		Node ret;
-		if (currentNode == null)
-			return null;
-		if (currentNode.next == null) {
-			currentNode.next = nextNode;
-			return currentNode;
-		}
-		ret = reverseRecurseUtil(currentNode.next, currentNode);
-		currentNode.next = nextNode;
-		return ret;
-	}
-
-	public void reverseRecurse() {
-		head = reverseRecurseUtil(head, null);
-	}
-
+	
 	// The linked list is sorted and it contains some duplicate values
 	public void removeDuplicate() {
 		Node curr = head;

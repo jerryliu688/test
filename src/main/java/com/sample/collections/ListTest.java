@@ -21,7 +21,7 @@ public class ListTest {
 		lStrings.add("b");
 		System.out.println(lStrings.get(0));
 		System.out.println(StringUtils.join(lStrings, ","));
-
+		System.out.println("max"+Collections.max(lStrings));
 		System.out.println(lStrings.subList(0, 1));
 
 		List<String> list = new ArrayList<String>();
@@ -34,6 +34,8 @@ public class ListTest {
 		list.add("a");
 		list.add("a");
 		list.add("a");
+		
+		String[] sa= list.toArray(new String[0]);
 
 		System.out.println("\n例子1 - 计算'a'出现的次数");
 		System.out.println("a : " + Collections.frequency(list, "a"));

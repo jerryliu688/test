@@ -14,6 +14,8 @@ public class LinkedListTest {
 
 		System.out.println("链表的第一个元素是 : " + lList.getFirst());
 		System.out.println("链表最后一个元素是 : " + lList.getLast());
+		
+	
 	}
 
 }
