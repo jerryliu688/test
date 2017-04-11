@@ -1,6 +1,6 @@
 package com.algorithm.linkedlist;
 
-public class LoopDetect extends LinkedList {
+public class LoopDetect extends ReverseList {
 
 	public boolean loopDetect() {
 		Node slowPtr;

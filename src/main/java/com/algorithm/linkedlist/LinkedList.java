@@ -177,7 +177,7 @@ public class LinkedList {
 		linkedList.sortedInsert(5);
 		linkedList.sortedInsert(6);
 		linkedList.sortedInsert(1);
-		linkedList.reverse();
+		
 		linkedList.print();
 	}
 }
