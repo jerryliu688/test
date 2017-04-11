@@ -30,5 +30,7 @@ public class IntTest {
 //		28         Integer i7 = new Integer(128);
 //		29         Integer i8 = new Integer(123);
 //		30         System.out.println(i7 == i8);  //false
+		
+		 System.out.print(Integer.toHexString(123));
 	}
 }
