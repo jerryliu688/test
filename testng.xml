@@ -8,7 +8,7 @@
 			</run>
 		</groups>
 		<packages>
-			<package name="com.testng.*" />
+			<package name="com.test.testng" />
 		</packages>
 	</test>
 </suite><!-- <classes>

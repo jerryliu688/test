@@ -7,6 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
+
 	<name>test</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
@@ -33,6 +34,41 @@
 			<version>6.10</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.apache.jmeter</groupId>
+			<artifactId>ApacheJMeter_core</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.jmeter</groupId>
+			<artifactId>ApacheJMeter_java</artifactId>
+			<version>3.0</version>
+		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.lazerycode.jmeter</groupId>
+				<artifactId>jmeter-maven-plugin</artifactId>
+				<version>2.1.0</version>
+				<executions>
+					<execution>
+						<id>jmeter-tests</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jmeter</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <groupId>de.codecentric</groupId> <artifactId>jmeter-graph-maven-plugin</artifactId> 
+				<version>0.1.0</version> <executions> <execution> <id>create-graphs</id> 
+				<goals> <goal>create-graph</goal> </goals> <phase>verify</phase> <configuration> 
+				<inputFile>${project.build.directory}/jmeter/results/20170412-HTTP_Request.jtl</inputFile> 
+				<graphs> <graph> <pluginType>ThreadsStateOverTime</pluginType> <width>800</width> 
+				<height>600</height> <outputFile>${project.build.directory}/jmeter/results/HTTP_Request.png</outputFile> 
+				</graph> </graphs> </configuration> </execution> </executions> </plugin> -->
+
+		</plugins>
+	</build>
 </project>
