@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,28 +12,34 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+
+
+import java.util.function.Function;
+
 import org.apache.commons.lang3.StringUtils;
 
 public class NewTest {
 
 	private WebDriver driver;
 
-	// @Test(groups = "STABLE")
-	// public void testEasy() {
-	// String id="kw";//lst-ib
-	// String input_text="Go Jerry";
-	// driver.get("http://www.baidu.com");//https://www.google.com
-	// WebElement element = driver.findElement(By.id(id));
-	// element.sendKeys(input_text);
-	// WebElement element_button = driver.findElement(By.id("su"));
-	// String text = element_button.getAttribute("value");
-	// Assert.assertTrue(text.contains("百度一下"));
-	// WebDriverWait wait = new WebDriverWait(driver, 20);
-	// wait.until(ExpectedConditions.presenceOfElementLocated(By.id(id)));
-	// element= driver.findElement(By.id(id));
-	// Assert.assertTrue(element.getAttribute("value").equals((input_text)));
-	//
-	// }
+	@Test(groups = "STABLE")
+	public void testEasy() {
+		String id = "kw";// lst-ib
+		String input_text = "Go Jerry";
+		driver.get("http://www.baidu.com");// https://www.google.com
+		WebElement element = driver.findElement(By.id(id));
+		element.sendKeys(input_text);
+		WebElement element_button = driver.findElement(By.id("su"));
+		String text = element_button.getAttribute("value");
+		Assert.assertTrue(text.contains("百度一下"));
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+//		wait.until( ExpectedConditions.presenceOfElementLocated(By.id(id)));
+		element = driver.findElement(By.id(id));
+		Assert.assertTrue(element.getAttribute("value").equals((input_text)));
+//		Actions action = new Actions(driver);
+//		action.click();// 鼠标左键在当前停留的位置做单击操作 
+//		action.click(driver.findElement(By.name(element)))// 鼠标左键点击指定的元素
+	}
 
 	@Test(groups = "GR")
 	public void testGR1() {
