@@ -1,7 +1,5 @@
 package com.algorithm.array;
-
-import com.sun.xml.internal.ws.wsdl.parser.InaccessibleWSDLException;
-
+ 
 public class ArrayRemove {
 
 	public static void main(String[] args) {

@@ -63,8 +63,7 @@ public class NewTest {
 
 	@BeforeTest
 	public void beforeTest() {
-		// System.setProperty("webdriver.gecko.driver",
-		// "C:\\Jerry\\Project\\workspace\\lib\\geckodriver.exe");
+		// System.setProperty("webdriver.gecko.driver", "C:\\Jerry\\Project\\workspace\\lib\\geckodriver.exe");
 		// driver = new FirefoxDriver();
 	}
 

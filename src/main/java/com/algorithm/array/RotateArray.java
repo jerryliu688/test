@@ -1,4 +1,4 @@
-package com.algorithm.search;
+package com.algorithm.array;
 
 import java.util.Arrays;
 
@@ -14,7 +14,7 @@ public class RotateArray {
 		int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 		int k = 3;
 		int n = arr.length;
-		// reverseArray(arr, 0, n - k - 1);
+		reverseArray(arr, 0, n - k - 1);
 		reverseArray(arr, n - k, n - 1);
 		reverseArray(arr, 0, n - 1);
 

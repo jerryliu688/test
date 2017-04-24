@@ -10,9 +10,9 @@ public class Palindrome {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//
-//		isPalindrome("aba");
+		// isPalindrome("aba");
 		findhuifen("aaabcdbaaa");
-		 
+
 	}
 
 	static boolean isPalindrome(String str) {
@@ -33,11 +33,15 @@ public class Palindrome {
 	static void findhuifen(String string) {
 		int length = string.length();
 		for (int i = 0, j = length - 1; i < j; i++, j--) {
-			if (string.charAt(i) !=string.charAt(j)) {
+			if (string.charAt(i) != string.charAt(j)) {
 				System.out.println("false");
 				return;
 			}
 		}
 		System.out.println("true");
+	}
+
+	public static boolean name() {
+		return true;
 	}
 }
