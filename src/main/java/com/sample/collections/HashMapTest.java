@@ -42,6 +42,5 @@ public class HashMapTest {
 			
 		System.out.println(maptest.containsKey("2"));
 		System.out.println(maptest.containsValue("day5"));
-	
 	}
 }

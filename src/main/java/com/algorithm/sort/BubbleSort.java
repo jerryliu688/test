@@ -24,20 +24,20 @@ public class BubbleSort {
 	}
 
 	public static void improved_sort(int arr[]) {
-		 int n=arr.length;
-         boolean NeedNextPass=true;
-         for(int i=1;i<n&&NeedNextPass;i++){//总共比较n-1趟，如果某趟遍历中没有交换，那么不需要下次遍历，因为元素以排好
-             NeedNextPass=false;
-             for(int j=0;j<n-i;j++){//第i趟比较n-i次
-                 if(arr[j]>arr[j+1]){
-                     int temp;
-                     temp=arr[j];
-                     arr[j]=arr[j+1];
-                     arr[j+1]=temp;     
-                     NeedNextPass=true;
-                 }
-             }
-         }
+		int n = arr.length;
+		boolean NeedNextPass = true;
+		for (int i = 1; i < n && NeedNextPass; i++) {// 总共比较n-1趟，如果某趟遍历中没有交换，那么不需要下次遍历，因为元素以排好
+			NeedNextPass = false;
+			for (int j = 0; j < n - i; j++) {// 第i趟比较n-i次
+				if (arr[j] > arr[j + 1]) {
+					int temp;
+					temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+					NeedNextPass = true;
+				}
+			}
+		}
 	}
 
 	// this is a selection sort but not efficient way

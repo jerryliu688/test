@@ -2,7 +2,7 @@ package com.sample.oo;
 
 import java.util.TreeSet;
 
-public class Compare {
+public class ComparableTest {
 
 	/**
 	 * @param args

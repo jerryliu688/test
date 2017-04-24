@@ -1,7 +1,7 @@
 package com.algorithm.sort;
 
 import java.util.Arrays;
-
+ 
 public class InsertionSort {
 
 	public static void main(String[] args) {
@@ -12,12 +12,23 @@ public class InsertionSort {
 	}
 
 	public static void sort(int arr[]) {
-		int size = arr.length, temp, j;
+//		int size = arr.length, temp, j;
+//		for (int i = 1; i < size; i++) {
+//			temp = arr[i];
+//			for (j = i; j > 0 && temp < arr[j - 1]; j--)
+//				arr[j] = arr[j - 1];
+//			arr[j] = temp;
+//		}
+
+		int size = arr.length;
+		int temp,j;
 		for (int i = 1; i < size; i++) {
-			temp = arr[i];
-			for (j = i; j > 0 && temp < arr[j - 1]; j--)
-				arr[j] = arr[j - 1];
-			arr[j] = temp;
+			 temp = arr[i];
+			for (j = i - 1; j > 0 && temp < arr[j - 1]; j--) {
+				arr[j]=arr[j-1];	
+			}
+			arr[j]=temp;
 		}
+
 	}
 }

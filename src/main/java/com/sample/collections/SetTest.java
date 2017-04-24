@@ -14,6 +14,7 @@ public class SetTest {
 		set.add(StringUtils.EMPTY);
 		set.add(null);
 		System.out.println(set);
+//		set.addAll(arg0)
 		 
 	}
 	

@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.print.DocFlavor.STRING;
+
 import org.apache.commons.lang3.StringUtils;
 
 import com.sun.xml.internal.ws.api.message.StreamingSOAP;
@@ -34,6 +36,15 @@ public class ListTest {
 		list.add("a");
 		list.add("a");
 		list.add("a");
+		List<String> alist=list.subList(3,list.size());
+		System.out.println("sub"+alist);
+//		alist.contains(arg0)
+		
+		List<String> result = new ArrayList<String>();
+		result.add("otherlist");
+		result.add("otherlist");
+		list.addAll(1,result);
+		System.out.println(list);
 		
 		String[] sa= list.toArray(new String[0]);
 
@@ -54,6 +65,8 @@ public class ListTest {
 			map.put(temp, (count == null) ? 1 : count + 1);
 		}
 		printMap(map);
+
+		
 
 	}
 
