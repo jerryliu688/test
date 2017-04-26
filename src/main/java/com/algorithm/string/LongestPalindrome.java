@@ -1,8 +1,5 @@
 package com.algorithm.string;
 
-import org.apache.commons.lang3.StringEscapeUtils;
-import org.apache.commons.lang3.StringUtils;
-
 public class LongestPalindrome {
 
 	public static void main(String[] args) {
@@ -10,7 +7,7 @@ public class LongestPalindrome {
 
 		String result = getPalindrome(str);
 		System.out.println(result);
-
+		
 	}
 
 	/**
@@ -33,7 +30,7 @@ public class LongestPalindrome {
 
 	// public static String getEvery(char[] ch, int i) {
 	// int length = ch.length;
-	// int j = length - 1; // can't ensure from end, maybe huifen is in middle
+	// int j = length - 1; // can't ensure from end, maybe huiwen is in middle
 	// of string.
 	// int start=i;
 	// for (; i < j; i++, j--) {

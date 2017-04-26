@@ -1,4 +1,4 @@
-package com.algorithm.linkedlist;
+package com.algorithm.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

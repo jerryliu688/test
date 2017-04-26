@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Duplicates {
+public class FindDuplicates {
 
 	public static void main(String[] args) {
 		// printRepeating(new int[] { 1, 2, 3, 4, 15, 6, 7, 8, 15 });

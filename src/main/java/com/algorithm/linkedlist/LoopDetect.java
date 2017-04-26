@@ -32,6 +32,7 @@ public class LoopDetect extends ReverseList {
 		}
 	}
 
+
 	public int loopTypeDetect() {
 		Node slowPtr;
 		Node fastPtr;
@@ -77,14 +78,14 @@ public class LoopDetect extends ReverseList {
 				firstPtr = firstPtr.next;
 			firstPtr.next = null;
 			return;
+		} else { // general loop case.
+			Node secondPtr = loopPoint;
+			while (firstPtr.next != secondPtr.next) {
+				firstPtr = firstPtr.next;
+				secondPtr = secondPtr.next;
+			}
+			secondPtr.next = null;
 		}
-		Node secondPtr = loopPoint;
-		while (firstPtr.next != secondPtr.next) // general loop case.
-		{
-			firstPtr = firstPtr.next;
-			secondPtr = secondPtr.next;
-		}
-		secondPtr.next = null;
 	}
 
 	public static void main(String[] args) {

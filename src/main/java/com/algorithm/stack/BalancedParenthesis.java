@@ -2,6 +2,10 @@ package com.algorithm.stack;
 
 import java.util.ArrayDeque;
 
+//Stacks can be used to check a program for balanced symbols (such as {}, (), []).
+//The closing symbol should be matched with the most recently seen opening symbol.
+//Example: {()} is legal, {() ({})} is legal, but {((} and {(}) are not legal
+	
 public class BalancedParenthesis {
 
 	public static boolean isBalancedParenthesis(String expn) {
