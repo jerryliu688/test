@@ -3,53 +3,60 @@ package com.sample.oo;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+class Professor0 implements Cloneable {
+	String name;
+	int age;
+
+	Professor0(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+}
+
+class Student0 implements Cloneable {
+	String name;// 常量对象。
+	int age;
+	Professor0 p;// 学生1和学生2的引用值都是一样的。
+
+	Student0(String name, int age, Professor0 p) {
+		this.name = name;
+		this.age = age;
+		this.p = p;
+	}
+
+	public Object clone() {
+		Student0 o = null;
+		try {
+			o = (Student0) super.clone();
+//			o.p = (Professor0) p.clone();     + this deepcopy
+		} catch (CloneNotSupportedException e) {
+			System.out.println(e.toString());
+		} 
+		return o;
+	}
+}
+
 public class CloneTset {
 
+	public static void ShallowCopy() {
+		Professor0 p = new Professor0("wangwu", 50);
+		Student0 s1 = new Student0("zhangsan", 18, p);
+		Student0 s2 = (Student0) s1.clone();
+		s2.p.name = "lisi";
+		s2.p.age = 30;
+		s2.name = "z";
+		s2.age = 45;
+		System.out.println("学生s1的姓名：" + s1.name + "\n学生s1教授的姓名：" + s1.p.name + "," + "\n学生s1教授的年纪" + s1.p.age);// 学生1的教授
+		// s2变了，但s1也变了，证明s1的p和s2的p指向的是同一个对象。这在我们有的实际需求中，却不是这样，因而我们需要深拷贝：
+	}
+
 	public static void main(String[] args) {
-		// 字符串(不理解无colne()方法)
-		String s = "sss";
-		String t = s; 
-		System.out.println(s==t);
-		String y = new String(s); // 深拷贝
-		System.out.println(y==t);
-		System.out.println("s:" + s + " t:" + t + " y:" + y);
-		t = "ttt";
-		y = "yyy";
-		System.out.println("s:" + s + " t:" + t + " y:" + y);
-
-		// 数组
-		String[] ss = { "111", "222", "333" };
-		String[] tt = ss; // 浅拷贝
-		String[] ww = (String[]) ss.clone();// 深拷贝
-		System.out.println("ss:" + ss[1] + " tt:" + tt[1] + " ww:" + ww[1]);
-		tt[1] = "2t2";
-		ww[1] = "2w2";
-		System.out.println("ss:" + ss[1] + " tt:" + tt[1] + " ww:" + ww[1]);
-		// list列表         
-		ArrayList a = new ArrayList();
-		for (int i = 0; i < 10; i++) {
-			a.add(String.valueOf(i + 1));
-		}
-		ArrayList b = a;// 浅拷贝
-		ArrayList c = new ArrayList(a);// 深拷贝
-		ArrayList d = (ArrayList) a.clone();// 深拷贝
-		System.out.println("a:" + a.get(1) + " b:" + b.get(1) + " c:" + c.get(1) + " d:" + d.get(1));
-		b.set(1, "bbb");
-		c.set(1, "ccc");
-		System.out.println("a:" + a.get(1) + " b:" + b.get(1) + " c:" + c.get(1) + " d:" + d.get(1));
-
-		// HashMap
-		HashMap h = new HashMap();
-		h.put("1", "hhh");
-		HashMap m = h;// 浅拷贝
-		HashMap p = new HashMap(h);// 深拷贝
-		HashMap n = (HashMap) h.clone();// 深拷贝
-		System.out.println("h:" + h.get("1") + " m:" + m.get("1") + " p:" + p.get("1") + " n:" + n.get("1"));
-		m.put("1", "mmm");
-		p.put("1", "ppp");
-		n.put("1", "nnn");
-		System.out.println("h:" + h.get("1") + " m:" + m.get("1") + " p:" + p.get("1") + " n:" + n.get("1"));
-
+		ShallowCopy();
+		
 	}
 
 }

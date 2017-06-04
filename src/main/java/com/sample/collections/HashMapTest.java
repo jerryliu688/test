@@ -39,8 +39,9 @@ public class HashMapTest {
 		for (String v : maptest.values()) {
 			System.out.println(v);
 		}
-			
+    
 		System.out.println(maptest.containsKey("2"));
 		System.out.println(maptest.containsValue("day5"));
+		
 	}
 }

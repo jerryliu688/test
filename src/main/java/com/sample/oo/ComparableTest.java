@@ -22,7 +22,7 @@ public class ComparableTest {
 		public Parent(int age) {
 			this.age = age;
 		}
-
+		
 		public int compareTo(Object o) {
 			// TODO Auto-generated method stub
 			System.out.println("method of parent");

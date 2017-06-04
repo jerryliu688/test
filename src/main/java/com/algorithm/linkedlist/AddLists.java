@@ -1,6 +1,6 @@
 package com.algorithm.linkedlist;
 
-public class AddLists {
+public class AddLists extends LinkedList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -88,18 +88,6 @@ public class LinkedList {
 		return false;
 	}
 
-	
-	// The linked list is sorted and it contains some duplicate values
-	public void removeDuplicate() {
-		Node curr = head;
-		while (curr != null) {
-			if (curr.next != null && curr.value == curr.next.value)
-				curr.next = curr.next.next;
-			else
-				curr = curr.next;
-		}
-	}
-
 	public void freeList() {
 		head = null;
 		size = 0;
@@ -128,30 +116,30 @@ public class LinkedList {
 		return count;
 	}
 
-	 // 查找单链表的中间结点  
-    /** 
-     * 此题可应用于上一题类似的思想。也是设置两个指针，只不过这里是，两个指针同时向前走，前面的指针每次走两步，后面的指针每次走一步， 
-     * 前面的指针走到最后一个结点时，后面的指针所指结点就是中间结点，即第（n/2+1）个结点。注意链表为空，链表结点个数为1和2的情况。时间复杂度O（n 
-     */  
-    public static Node getMiddleNode(Node head) {  
-        if (head == null || head.next == null) {  
-            return head;  
-        }  
-  
-        Node q = head;      // p---q   
-        Node p = head;  
-  
-        // 前面指针每次走两步，直到指向最后一个结点，后面指针每次走一步  
-        while (q.next != null) {  
-            q = q.next;  
-            p = p.next;  
-            if (q.next != null) {  
-                q = q.next;  
-            }  
-        }  
-        return p;  
-    }  
-  
+	// 查找单链表的中间结点
+	/**
+	 * 此题可应用于上一题类似的思想。也是设置两个指针，只不过这里是，两个指针同时向前走，前面的指针每次走两步，后面的指针每次走一步，
+	 * 前面的指针走到最后一个结点时，后面的指针所指结点就是中间结点，即第（n/2+1）个结点。注意链表为空，链表结点个数为1和2的情况。时间复杂度O（n
+	 */
+	public static Node getMiddleNode(Node head) {
+		if (head == null || head.next == null) {
+			return head;
+		}
+
+		Node q = head; // p---q
+		Node p = head;
+
+		// 前面指针每次走两步，直到指向最后一个结点，后面指针每次走一步
+		while (q.next != null) {
+			q = q.next;
+			p = p.next;
+			if (q.next != null) {
+				q = q.next;
+			}
+		}
+		return p;
+	}
+
 	public static void main(String[] args) {
 		LinkedList linkedList = new LinkedList();
 		// linkedList.addHead(1);
@@ -162,7 +150,7 @@ public class LinkedList {
 		linkedList.sortedInsert(5);
 		linkedList.sortedInsert(6);
 		linkedList.sortedInsert(1);
-		
+
 		linkedList.print();
 	}
 }
@@ -181,8 +169,8 @@ class Node {
 		this.value = v;
 		next = null;
 	}
-	
-	public Node(){
-		
+
+	public Node() {
+
 	}
 }

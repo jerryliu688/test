@@ -21,6 +21,6 @@ public class StringTest {
 		// 7+'0'= int 55 => to char '7' so '0' is base char number
 		char digit = (char) (7 + '0');// =>'7'
 		
-	
+//		String.join(delimiter, elements)
 	}
 }

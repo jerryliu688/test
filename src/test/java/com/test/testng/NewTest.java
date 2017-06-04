@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-
+import static org.testng.Assert.assertEquals;
 
 import java.util.function.Function;
 
@@ -49,6 +49,7 @@ public class NewTest {
 	@Test(groups = "GR")
 	public void testGR2() {
 		System.out.println("GR2");
+		assertEquals(true, false);
 	}
 
 	@Test(groups = { "systemtest" })

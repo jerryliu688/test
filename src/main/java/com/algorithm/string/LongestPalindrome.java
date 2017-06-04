@@ -7,7 +7,7 @@ public class LongestPalindrome {
 
 		String result = getPalindrome(str);
 		System.out.println(result);
-		
+
 	}
 
 	/**

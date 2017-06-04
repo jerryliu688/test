@@ -9,7 +9,7 @@ public class FindDuplicates {
 	public static void main(String[] args) {
 		// printRepeating(new int[] { 1, 2, 3, 4, 15, 6, 7, 8, 15 });
 
-		int[] arr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 5 };
+		int[] arr = new int[] { 1, 2, 3, 4, 5, 5, 6, 7, 8 };
 		printRepeating(arr);
 		System.out.println(Arrays.toString(arr));
 	}
